@@ -1,3 +1,2 @@
-# Dependency Injection in Android with Dagger 2
+# Star Wars Example
 
-Tutorial application for my [course about Dependency Injection in Android](https://www.udemy.com/dependency-injection-in-android-with-dagger/?couponCode=GITHUB).
