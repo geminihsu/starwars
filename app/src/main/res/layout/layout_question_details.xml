@@ -133,6 +133,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:background="@color/btn_bouns_record"
+        android:textColor="@color/white"
         android:text="Movie"/>
 
 </LinearLayout>

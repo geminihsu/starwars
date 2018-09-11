@@ -1,9 +1,11 @@
  package com.gemini.starwar.screens.characterdetails;
 
+ import android.app.SearchManager;
  import android.content.Context;
  import android.content.Intent;
  import android.databinding.DataBindingUtil;
  import android.os.Bundle;
+ import android.util.Log;
 
  import com.gemini.starwar.Characteristics.CharacteristicsDetails;
  import com.gemini.starwar.Characteristics.FetchCharacterDetailsUseCase;
@@ -41,6 +43,7 @@
      @Override
      protected void onCreate(Bundle savedInstanceState) {
          super.onCreate(savedInstanceState);
+
          getPresentationComponent().inject(this);
 
          mViewMvc = mViewMvcFactory.newInstance(CharacterDetailsViewMvc.class, null);
@@ -52,6 +55,8 @@
           //noinspection ConstantConditions
          mQuestionId = getIntent().getExtras().getString(EXTRA_QUESTION_ID);
      }
+
+
 
      @Override
      protected void onStart() {

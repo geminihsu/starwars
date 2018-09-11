@@ -1,9 +1,18 @@
  package com.gemini.starwar.screens.characterlist;
 
+ import android.app.SearchManager;
+ import android.content.Context;
+ import android.content.Intent;
  import android.os.Bundle;
+ import android.util.Log;
+ import android.view.Menu;
+ import android.view.MenuInflater;
+ import android.widget.SearchView;
 
  import com.gemini.starwar.Characteristics.Character;
+ import com.gemini.starwar.Characteristics.FetchCharacterDetailsUseCase;
  import com.gemini.starwar.Characteristics.FetchCharacterListUseCase;
+ import com.gemini.starwar.R;
  import com.gemini.starwar.screens.characterdetails.CharacterDetailsActivity;
  import com.gemini.starwar.screens.common.activities.BaseActivity;
  import com.gemini.starwar.screens.common.dialogs.DialogsManager;
@@ -24,6 +33,9 @@
      @Inject DialogsManager mDialogsManager;
      @Inject ViewMvcFactory mViewMvcFactory;
 
+     @Inject
+     FetchCharacterDetailsUseCase mFetchCharacterDetailsUseCase;
+
      private CharacterListViewMvc mViewMvc;
 
      @Override
@@ -34,8 +46,32 @@
          mViewMvc = mViewMvcFactory.newInstance(CharacterListViewMvc.class, null);
 
          setContentView(mViewMvc.getRootView());
+         Intent intent = getIntent();
+         if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
+             String query = intent.getStringExtra(SearchManager.QUERY);
+             finish();
+             CharacterDetailsActivity.start(CharacterListActivity.this,query);
+         }
 
      }
+
+
+     @Override
+     public boolean onCreateOptionsMenu(Menu menu) {
+         MenuInflater inflater = getMenuInflater();
+         inflater.inflate(R.menu.options_menu, menu);
+
+         // Associate searchable configuration with the SearchView
+         SearchManager searchManager =
+                 (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+         SearchView searchView =
+                 (SearchView) menu.findItem(R.id.search).getActionView();
+         searchView.setSearchableInfo(
+                 searchManager.getSearchableInfo(getComponentName()));
+
+         return true;
+     }
+
 
      @Override
      protected void onStart() {
@@ -44,6 +80,7 @@
          mFetchCharacterListUseCase.registerListener(this);
 
          mFetchCharacterListUseCase.fetchLastActiveQuestionsAndNotify();
+
      }
 
      @Override
