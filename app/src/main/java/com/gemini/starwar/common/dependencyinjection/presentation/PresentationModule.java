@@ -7,7 +7,7 @@ import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 
 import com.gemini.starwar.networking.StarWarApi;
-import com.gemini.starwar.questions.FetchCharacterDetailsUseCase;
+import com.gemini.starwar.Characteristics.FetchCharacterDetailsUseCase;
 import com.gemini.starwar.screens.common.ImageLoader;
 import com.gemini.starwar.screens.common.dialogs.DialogsManager;
 

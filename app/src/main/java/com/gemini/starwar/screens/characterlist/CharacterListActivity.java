@@ -2,8 +2,8 @@
 
  import android.os.Bundle;
 
- import com.gemini.starwar.questions.Character;
- import com.gemini.starwar.questions.FetchCharacterListUseCase;
+ import com.gemini.starwar.Characteristics.Character;
+ import com.gemini.starwar.Characteristics.FetchCharacterListUseCase;
  import com.gemini.starwar.screens.characterdetails.CharacterDetailsActivity;
  import com.gemini.starwar.screens.common.activities.BaseActivity;
  import com.gemini.starwar.screens.common.dialogs.DialogsManager;

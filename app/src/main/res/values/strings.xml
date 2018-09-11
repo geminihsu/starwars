@@ -3,4 +3,12 @@
     <string name="server_error_dialog_title">Server Error</string>
     <string name="server_error_dialog_message">Communication with the server failed</string>
     <string name="server_error_dialog_button_caption">OK</string>
+
+
+    <string name="character_name">Name : </string>
+    <string name="character_height">Height : </string>
+    <string name="character_hair_color">Hair Color : </string>
+    <string name="character_skin_color">Skin Color : </string>
+
+
 </resources>

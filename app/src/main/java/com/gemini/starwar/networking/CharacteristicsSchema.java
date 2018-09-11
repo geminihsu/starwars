@@ -2,6 +2,8 @@ package com.gemini.starwar.networking;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
 public class CharacteristicsSchema {
 
     @SerializedName("name")
@@ -26,7 +28,10 @@ public class CharacteristicsSchema {
     private final String mGender;
 
 
-    public CharacteristicsSchema(String name, String height, String hair_color, String skin_color,String eye_color,String birth_year,String gender) {
+    @SerializedName("films")
+    private final List<String> mFilms;
+
+    public CharacteristicsSchema(String name, String height, String hair_color, String skin_color,String eye_color,String birth_year,String gender,List<String> films) {
         mName = name;
         mHeight = height;
         mHairColor = hair_color;
@@ -34,7 +39,7 @@ public class CharacteristicsSchema {
         mEye_color = eye_color;
         mBirth_year = birth_year;
         mGender = gender;
-
+        mFilms = films;
     }
 
     public String getmName() {
@@ -65,4 +70,7 @@ public class CharacteristicsSchema {
         return mGender;
     }
 
+    public List<String> getmFilms() {
+        return mFilms;
+    }
 }

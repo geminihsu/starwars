@@ -1,6 +1,7 @@
 package com.gemini.starwar;
 
 import android.app.Application;
+import android.databinding.DataBindingUtil;
 
 import com.gemini.starwar.common.dependencyinjection.application.ApplicationComponent;
 import com.gemini.starwar.common.dependencyinjection.application.ApplicationModule;
@@ -16,6 +17,7 @@ public class MyApplication extends Application {
         mApplicationComponent = DaggerApplicationComponent.builder()
                 .applicationModule(new ApplicationModule(this))
                 .build();
+
     }
 
     public ApplicationComponent getApplicationComponent() {

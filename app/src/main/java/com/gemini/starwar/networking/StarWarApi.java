@@ -13,4 +13,8 @@ public interface StarWarApi {
     @GET("/api/people/?")
     Call<SingleCharacterResponseSchema> characterDetails(@Query("search") String name);
 
+
+    @GET("/api/films/{id}")
+    Call<FilmsSchema> filmDetails(@Path("id") Integer date);
+
 }

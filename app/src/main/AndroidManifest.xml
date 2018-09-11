@@ -21,7 +21,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.gemini.starwar.screens.characterdetails.CharacterDetailsActivity"/>
+        <activity android:name="com.gemini.starwar.screens.characterdetails.CharacterDetailsActivity"
+            android:parentActivityName=".screens.characterlist.CharacterListActivity"
+            />
 
     </application>
 

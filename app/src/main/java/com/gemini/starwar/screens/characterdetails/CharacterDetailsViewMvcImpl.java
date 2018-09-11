@@ -2,11 +2,13 @@ package com.gemini.starwar.screens.characterdetails;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 
+import com.gemini.starwar.Characteristics.FilmsDetails;
 import com.gemini.starwar.R;
-import com.gemini.starwar.questions.CharacteristicsDetails;
+import com.gemini.starwar.Characteristics.CharacteristicsDetails;
 import com.gemini.starwar.screens.common.ImageLoader;
 import com.gemini.starwar.screens.common.mvcviews.BaseViewMvc;
 
@@ -16,10 +18,12 @@ public class CharacterDetailsViewMvcImpl extends BaseViewMvc<CharacterDetailsVie
     private final ImageLoader mImageLoader;
 
 
-    private final TextView mTxtHeight;
-    private final TextView mTxtMass;
-    private final TextView mTxtHair_color;
-    private final TextView mTxtUserDisplayName;
+    private final EditText mTxtHeight;
+    private final EditText mTxtSkin;
+    private final EditText mTxtHair_color;
+    private final EditText mTxtUserDisplayName;
+    private final Button btnMovie;
+
     private final ImageView mImgUserAvatar;
 
     public CharacterDetailsViewMvcImpl(LayoutInflater inflater, ViewGroup container, ImageLoader imageLoader) {
@@ -28,9 +32,10 @@ public class CharacterDetailsViewMvcImpl extends BaseViewMvc<CharacterDetailsVie
 
         mTxtHeight = findViewById(R.id.txt_height);
         mTxtUserDisplayName = findViewById(R.id.txt_user_display_name);
-        mTxtHair_color = findViewById(R.id.txt_hair_color);
-        mTxtMass = findViewById(R.id.txt_mass);
+        mTxtHair_color = findViewById(R.id.txt_hair);
+        mTxtSkin = findViewById(R.id.txt_skin_color);
         mImgUserAvatar = findViewById(R.id.img_user_avatar);
+        btnMovie= findViewById(R.id.movie);
     }
 
     @Override
@@ -45,8 +50,13 @@ public class CharacterDetailsViewMvcImpl extends BaseViewMvc<CharacterDetailsVie
 
         mTxtUserDisplayName.setText(question.getmName());
         mTxtHeight.setText(question.getmHeight());
-        mTxtMass.setText(question.getmHairColor());
+        mTxtSkin.setText(question.getmHairColor());
         mTxtHair_color.setText(question.getmEyeColor());
         //mImageLoader.loadImage(question.getUserAvatarUrl(), mImgUserAvatar);
+    }
+
+    @Override
+    public void bindMovie(FilmsDetails question) {
+        btnMovie.setText(question.getmTitle());
     }
 }

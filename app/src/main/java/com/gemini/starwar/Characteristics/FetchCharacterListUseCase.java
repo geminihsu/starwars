@@ -1,4 +1,4 @@
-package com.gemini.starwar.questions;
+package com.gemini.starwar.Characteristics;
 
 import android.support.annotation.Nullable;
 

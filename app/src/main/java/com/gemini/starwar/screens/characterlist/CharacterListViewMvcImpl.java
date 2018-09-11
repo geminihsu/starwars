@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.gemini.starwar.R;
-import com.gemini.starwar.questions.Character;
+import com.gemini.starwar.Characteristics.Character;
 import com.gemini.starwar.screens.common.mvcviews.BaseViewMvc;
 
 import java.util.ArrayList;

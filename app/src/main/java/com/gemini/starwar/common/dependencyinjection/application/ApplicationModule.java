@@ -3,7 +3,7 @@ package com.gemini.starwar.common.dependencyinjection.application;
 import android.app.Application;
 
 import com.gemini.starwar.networking.StarWarApi;
-import com.gemini.starwar.questions.FetchCharacterListUseCase;
+import com.gemini.starwar.Characteristics.FetchCharacterListUseCase;
 
 import dagger.Module;
 import dagger.Provides;
